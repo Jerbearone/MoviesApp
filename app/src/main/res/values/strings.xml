@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MoviesNow</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="release_date">Release Date :</string>
+    <string name="trailer">Trailer</string>
+    <string name="_10">/10</string>
+    <string name="rating">Rating:</string>
+    <string name="reviews">Reviews:</string>
+    <string-array name="sorting_selector">
+        <item>Popular</item>
+        <item>Rating</item>
+        <item>Favorite</item>
+
+    </string-array>
+</resources>
