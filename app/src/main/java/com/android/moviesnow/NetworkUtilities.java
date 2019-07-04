@@ -1,11 +1,7 @@
 package com.android.moviesnow;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +13,7 @@ import java.util.Scanner;
 public class NetworkUtilities {
     //Must delete this KEY --------================---------
     // You can get your own API key by requesting one at https://api.themoviedb.org.
-    static final String MYKEY = "Insert Your API key here..";
+    static final String MYKEY = "b0123e938fadf8f9eb78057d4826525d";
     static final String THEMOVIEDBBASEURL = "https://api.themoviedb.org/3/movie/";
     static final String THEMOVIEIMAGEBASEURL = "https://image.tmdb.org/t/p";
     static final String THEMOVIEIMAGESIZE = "w185"; // This is the image size..

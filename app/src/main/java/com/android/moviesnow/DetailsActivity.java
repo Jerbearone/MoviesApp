@@ -1,6 +1,5 @@
 package com.android.moviesnow;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -9,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
@@ -43,6 +43,8 @@ public class DetailsActivity extends AppCompatActivity {
     ActivityDetailsBinding mBinding;
     private favoritesDatabase mFavoritesDatabase;
     JSONObject mTrailerJson;
+
+    FavoritesEntry dbFavorite;
 
     //will be used so task id can be receieved though an intent
     public final static String EXTRA_TASK_ID = "extraTaskId";
@@ -134,6 +136,7 @@ public class DetailsActivity extends AppCompatActivity {
         favoritesViewModel.getFavorite().observe(this, new Observer<FavoritesEntry>() {
             @Override
             public void onChanged(FavoritesEntry favoritesEntry) {
+                dbFavorite = favoritesEntry;
                 favoritesViewModel.getFavorite().removeObserver(this);
                 //will need to implement this for favorites button being observed on change.
 
@@ -151,7 +154,7 @@ public class DetailsActivity extends AppCompatActivity {
                 String theid = String.valueOf(favoritesEntry.getFavorited_movie_id());
                 Log.w(TAG, "THIS IS THE VALUE OF GETFAVORITEMOVIEID " + theid);
 
-                FavoritesEntry dataCheck = mFavoritesDatabase.favoritesDao().queryFavoriteId(id_being_checked);
+                FavoritesEntry dataCheck = dbFavorite;
 
 
                 if (dataCheck == null) {

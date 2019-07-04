@@ -267,6 +267,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             mMovieInfo.clear();
                             //retrive Json Data and start recyclerView afterwards.
                             favoriteUrlsList.clear();
+                            resetRecyclerViewAdapter();
                             new FavoritesQueryTask().execute(favoriteUrlsList);
 
 
